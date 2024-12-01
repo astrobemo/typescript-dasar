@@ -74,6 +74,30 @@ describe('Interface data type', () => {
         expect(manager.numberOfEmployees).toBe(10);
     });
 
+    it('support function interface', () => {
+        interface Add {
+            (a: number, b: number): number;
+        }
+
+        const add: Add = (a: number, b: number) => {
+            return a + b;
+        };
+
+        expect(add(1, 2)).toBe(3);
+
+        interface Person {
+            name: string;
+            sayHello(): string;
+        }
+
+        const person: Person = {
+            name: 'John Doe',
+            sayHello() {
+                return `Hello, ${this.name}`;
+            }
+        };
+    });
+
     it('support class interface', () => {
         interface ClockInterface {
             currentTime: Date;
