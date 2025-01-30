@@ -72,8 +72,7 @@ function addToArray<T>(array: T[], item: T):T[]{
 addToArray<Pizza>(menu, {id: 4, name: 'Pizza Hawaii', price: 13});
 // klo ga pake <Order>, dia ga complain klo status nya ga ada di union
 // makanya kl orderQueue<Order> artinya explicit kasih tau klo ini array of Order
-
-addToArray(orderQueue, {orderNumber: 2, pizza: menu[0], status: 'dandan'});
+addToArray<Order>(orderQueue, {orderNumber: 2, pizza: menu[0], status: 'ordered'});
 
 addNewPizza({name: 'Pizza Hawaii', price: 13});
 addNewPizza({name: 'Pizza Quattro Stagioni', price: 17});
